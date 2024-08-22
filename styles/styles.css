@@ -256,6 +256,35 @@ main .section.highlight {
   padding: 40px 0;
 }
 
-main .section.top {
-  background-color: blue;
+main .section.hero-container {
+  background-color: #1c72d9;
+}
+
+main .section.hero-container picture {position: static;object-fit: none;}
+main .section.hero-container > div div.hero > div > div > p {display: inline-block;}
+
+
+.hero h1 strong {
+  display: block;
+}
+
+main .section.hero-container img {
+  object-fit: contain;
+  width: 30%;
+  height: 30%;
+  filter: brightness(0) saturate(100%) invert(100%) sepia(2%) saturate(8%) hue-rotate(331deg) brightness(101%) contrast(101%);
+}
+
+main .section.subtitle{
+  color: yellow;
+  background-color:#1c72d9 ;
+}
+
+main .section.columns-container{
+  background-color:#1c72d9 ;
+}
+
+main .columns.block.columns-2-cols{
+  color: white;
+  font-size: 10px;
 }
