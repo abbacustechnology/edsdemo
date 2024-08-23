@@ -17,7 +17,7 @@
   --dark-color: #505050;
   --text-color: #131313;
   --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  --link-hover-color: #ffcc28;
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback, sans-serif;
@@ -82,6 +82,7 @@ body {
 
 body.appear {
   display: block;
+  background-color: transparent;
 }
 
 header {
@@ -161,8 +162,8 @@ a:any-link {
 }
 
 a:hover {
-  color: var(--link-hover-color);
-  text-decoration: underline;
+  color: var(--link-hover-color) !important;
+  
 }
 
 /* buttons */
@@ -193,8 +194,9 @@ a.button:hover,
 a.button:focus,
 button:hover,
 button:focus {
-  background-color: var(--link-hover-color);
+  background-color: var(--link-color) !important;
   cursor: pointer;
+  color: white !important;
 }
 
 button:disabled,
@@ -282,6 +284,7 @@ main .section.subtitle{
 
 main .section.columns-container{
   background-color:#1c72d9 ;
+  margin: auto;
 }
 
 main .columns.block.columns-2-cols{
@@ -309,6 +312,7 @@ header nav .nav-brand img {
 .columns > div > .columns-img-col img {
   display: block;
   width : 100%;
+  float: right;
   animation: moveRightAndScale 3s ease-in-out ;
   overflow: hidden;
 }
@@ -322,10 +326,10 @@ header nav .nav-brand img {
 
 
 .section.second.columns-container .columns-wrapper .columns.block.columns-2-cols h1 {
-  font-size: 28px;
+  font-size: 50px;
   color: black;
   font-weight: bold;
-  margin-bottom: 25px;
+  /* margin-bottom: 25px; */
   /* text-transform: uppercase; */
 }
 
@@ -340,5 +344,51 @@ header nav .nav-brand img {
 
 .section.second.columns-container .columns-wrapper .columns.block.columns-2-cols p{
   color: black;
-  font-size: 15px;
+  font-size: 25px;
 }
+.section.nav-sections .default-content-wrapper a{
+  color: white;
+  font-variant: initial;
+}
+
+.section.columns-container .columns-wrapper .columns.block.columns-2-cols .columns-img-col{
+  background: url(https://www.abbacustechnologies.com/wp-content/themes/abbacus/assets/images/dotted-bg.svg)
+}
+
+.section.columns-container .columns-wrapper .columns.block.columns-2-cols hr{
+  display: block;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  unicode-bidi: isolate;
+  overflow: hidden;
+  border-style: inset;
+  border-width: 0.5px;
+}
+
+.section.yellow.tabs-container{
+  background-color: #ffd740;
+  height: auto;
+  padding: 5px;
+  margin: auto;
+}
+
+.section.yellow.tabs-container .default-content-wrapper p{
+  font-weight: bold;
+}
+
+.section.yellow.tabs-container .default-content-wrapper h3{
+  font-size: 28px;
+  line-height: 36px;
+  color : black
+}
+
+.default-content-wrapper .button-container a{
+  background-color: white;
+  color : black
+}
+
+
+
+
