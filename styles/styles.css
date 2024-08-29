@@ -297,12 +297,14 @@ header nav .nav-brand img {
   filter: brightness(0) saturate(100%) invert(100%) sepia(2%) saturate(8%) hue-rotate(331deg) brightness(101%) contrast(101%);
 }
 
+
+
 @keyframes moveRightAndScale {
   0% {
     transform: translateX(0) scale(1);
   }
   50% {
-    transform: translateX(50px) scale(1.1);
+    transform: translateX(5px) scale(1);
   }
   100% {
     transform: translateX(0) scale(1);
@@ -311,10 +313,14 @@ header nav .nav-brand img {
 
 .columns > div > .columns-img-col img {
   display: block;
-  width : 100%;
+  width: 100%;
   float: right;
-  animation: moveRightAndScale 3s ease-in-out ;
   overflow: hidden;
+  transform: translateX(0) scale(1); /* Ensure the image resets to its original position when not hovered */
+}
+
+.columns > div > .columns-img-col img:hover {
+  animation: moveRightAndScale 1s ease-in-out;
 }
 
 .section.second.columns-container {
@@ -355,6 +361,8 @@ header nav .nav-brand img {
   background: url(https://www.abbacustechnologies.com/wp-content/themes/abbacus/assets/images/dotted-bg.svg)
 }
 
+
+
 .section.columns-container .columns-wrapper .columns.block.columns-2-cols hr{
   display: block;
   margin-block-start: 0.5em;
@@ -387,6 +395,19 @@ header nav .nav-brand img {
 .default-content-wrapper .button-container a{
   background-color: white;
   color : black
+}
+
+.section.form-section .default-content-wrapper h3{
+  font-weight: 600;
+  color: black;
+  font-size: 28px;
+  line-height: 36px;
+  align-self: center;
+}
+.section.form-section .default-content-wrapper {
+  justify-content: center !important;
+  background-color: red;
+  align-items: center !important;
 }
 
 
