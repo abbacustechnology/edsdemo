@@ -168,3 +168,7 @@
 .form .toggle-wrapper input:checked + .slider::before {
   transform: translateX(24px);
 }
+
+.form .textarea-class.field-wrapper.text-wrapper {
+  /* background-color: red; */
+}
