@@ -25,5 +25,9 @@
     "eslint-plugin-import": "2.29.1",
     "stylelint": "16.8.1",
     "stylelint-config-standard": "36.0.1"
+  },
+  "dependencies": {
+    "@adobe/aem-boilerplate": "file:",
+    "axios": "^1.7.5"
   }
 }
