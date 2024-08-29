@@ -64,7 +64,7 @@ async function handleSubmit(form) {
     if (response.ok) {
       if (form.dataset.confirmation) {
         window.location.href = form.dataset.confirmation;
-        alert(JSON.stringify(responseData))
+        // alert(JSON.stringify(responseData))
       }
     } else {
       const error = await response.text();
