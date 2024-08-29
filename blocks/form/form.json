@@ -74,7 +74,19 @@
       "Style": "",
       "ID": "form-submit",
       "Fieldset": ""
-    }
+    },
+    {
+      "Name": "",
+      "Type": "confirmation",
+      "Label": "",
+      "Placeholder": "",
+      "Value": "https://main--edsdemo--abbacustechnology.hlx.live/thank-you",
+      "Options": "",
+      "Mandatory": "",
+      "Style": "",
+      "ID": "",
+      "Fieldset": ""
+      }
   ],
   ":type": "sheet"
 }
