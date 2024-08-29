@@ -6,25 +6,13 @@
       {
         "Name": "headline",
         "Type": "heading",
-        "Label": "Please fill out the form below",
+        "Label": "Let's get started",
         "Placeholder": "",
         "Value": "",
         "Options": "",
         "Mandatory": "",
         "Style": "",
         "ID": "form-headline",
-        "Fieldset": ""
-      },
-      {
-        "Name": "description",
-        "Type": "plaintext",
-        "Label": "Enter your favorite quote, and you could win a prize (not really, this is just an example form)",
-        "Placeholder": "",
-        "Value": "",
-        "Options": "",
-        "Mandatory": "",
-        "Style": "",
-        "ID": "form-description",
         "Fieldset": ""
       },
       {
