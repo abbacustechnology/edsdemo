@@ -59,7 +59,7 @@
         "Value": "",
         "Options": "",
         "Mandatory": "true",
-        "Style": "",
+        "Style": "textarea-class",
         "ID": "form-message",
         "Fieldset": ""
       },
