@@ -1,5 +1,4 @@
 import createField from './form-fields.js';
-import axios from 'axios';
 async function createForm(formHref, submitHref) {
   const { pathname } = new URL(formHref);
   const resp = await fetch(pathname);
