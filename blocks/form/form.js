@@ -42,6 +42,65 @@ function generatePayload(form) {
   return payload;
 }
 
+
+function showLoader() {
+  const loaderContainer = document.createElement('div');
+  loaderContainer.className = 'loader-container';
+
+  const loader = document.createElement('div');
+  loader.className = 'loader';
+  
+  loaderContainer.appendChild(loader);
+  document.body.appendChild(loaderContainer);
+}
+
+
+// Function to hide loader
+function hideLoader(form) {
+  const loader = form.querySelector('.loader');
+  if (loader) {
+    form.removeChild(loader);
+  }
+}
+
+
+// async function handleSubmit(form) {
+//   if (form.getAttribute('data-submitting') === 'true') return;
+
+//   const submit = form.querySelector('button[type="submit"]');
+//   try {
+//     form.setAttribute('data-submitting', 'true');
+//     submit.disabled = true;
+
+//     // create payload
+//     const payload = generatePayload(form);
+//     console.log("apiURL---->",JSON.stringify(form.dataset.action))
+//     console.log("apiRequest--->",JSON.stringify(payload))
+//     const response = await fetch(form.dataset.action, {
+//       method: 'POST',
+//       body: JSON.stringify({ data: payload }),
+     
+//     });
+//     const responseData = await response.json(); // or .text(), depending on your API response type
+//     console.log("apiResponseBody---->", JSON.stringify(responseData));
+//     if (response.ok) {
+//       if (form.dataset.confirmation) {
+//         window.location.href = form.dataset.confirmation;
+//         // alert(JSON.stringify(responseData))
+//       }
+//     } else {
+//       const error = await response.text();
+//       throw new Error(error);
+//     }
+//   } catch (e) {
+//     // eslint-disable-next-line no-console
+//     console.error(e);
+//   } finally {
+//     form.setAttribute('data-submitting', 'false');
+//     submit.disabled = false;
+//   }
+// }
+
 async function handleSubmit(form) {
   if (form.getAttribute('data-submitting') === 'true') return;
 
@@ -49,15 +108,16 @@ async function handleSubmit(form) {
   try {
     form.setAttribute('data-submitting', 'true');
     submit.disabled = true;
+    showLoader(form);
 
-    // create payload
+    // Create payload
     const payload = generatePayload(form);
-    console.log("apiURL---->",JSON.stringify(form.dataset.action))
-    console.log("apiRequest--->",JSON.stringify(payload))
+    console.log("apiURL---->", JSON.stringify(form.dataset.action));
+    console.log("apiRequest--->", JSON.stringify(payload));
     const response = await fetch(form.dataset.action, {
+      mode: 'no-cors',
       method: 'POST',
       body: JSON.stringify({ data: payload }),
-     
     });
     const responseData = await response.json(); // or .text(), depending on your API response type
     console.log("apiResponseBody---->", JSON.stringify(responseData));
@@ -76,6 +136,7 @@ async function handleSubmit(form) {
   } finally {
     form.setAttribute('data-submitting', 'false');
     submit.disabled = false;
+    hideLoader(form);
   }
 }
 
