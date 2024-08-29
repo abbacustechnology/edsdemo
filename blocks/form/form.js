@@ -59,7 +59,8 @@ async function handleSubmit(form) {
       body: JSON.stringify({ data: payload }),
      
     });
-    console.log("apiResponse---->",JSON.stringify(response))
+    const responseData = await response.json(); // or .text(), depending on your API response type
+    console.log("apiResponseBody---->", JSON.stringify(responseData));
     if (response.ok) {
       if (form.dataset.confirmation) {
         window.location.href = form.dataset.confirmation;
