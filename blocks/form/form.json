@@ -1,58 +1,80 @@
 {
-    "total": 7,
-    "offset": 0,
-    "limit": 8,
-    "data": [
-      {
-        "Name": "headline",
-        "Type": "heading",
-        "Label": "Let's get started",
-        "Placeholder": "",
-        "Value": "",
-        "Options": "",
-        "Mandatory": "",
-        "Style": "",
-        "ID": "form-headline",
-        "Fieldset": ""
-      },
-      {
-        "Name": "name",
-        "Type": "text",
-        "Label": "Name",
-        "Placeholder": "",
-        "Value": "",
-        "Options": "",
-        "Mandatory": "true",
-        "Style": "",
-        "ID": "form-name",
-        "Fieldset": ""
-      },
-      {
-        "Name": "job",
-        "Type": "text",
-        "Label": "Job",
-        "Placeholder": "",
-        "Value": "",
-        "Options": "",
-        "Mandatory": "true",
-        "Style": "",
-        "ID": "form-email",
-        "Fieldset": ""
-      },
-     
-      {
-        "Name": "submit",
-        "Type": "submit",
-        "Label": "Submit",
-        "Placeholder": "",
-        "Value": "",
-        "Options": "",
-        "Mandatory": "",
-        "Style": "",
-        "ID": "form-submit",
-        "Fieldset": ""
-      }
-    ],
-    ":type": "sheet"
-  }
-  
+  "total": 7,
+  "offset": 0,
+  "limit": 8,
+  "data": [
+    {
+      "Name": "headline",
+      "Type": "heading",
+      "Label": "Let's get started",
+      "Placeholder": "",
+      "Value": "",
+      "Options": "",
+      "Mandatory": "",
+      "Style": "",
+      "ID": "form-headline",
+      "Fieldset": ""
+    },
+    {
+      "Name": "name",
+      "Type": "text",
+      "Label": "Name",
+      "Placeholder": "",
+      "Value": "",
+      "Options": "",
+      "Mandatory": "true",
+      "Style": "",
+      "ID": "form-name",
+      "Fieldset": ""
+    },
+    {
+      "Name": "email",
+      "Type": "text",
+      "Label": "Email",
+      "Placeholder": "",
+      "Value": "",
+      "Options": "",
+      "Mandatory": "true",
+      "Style": "",
+      "ID": "form-email",
+      "Fieldset": ""
+    },
+    {
+      "Name": "phone",
+      "Type": "text",
+      "Label": "Phone",
+      "Placeholder": "",
+      "Value": "",
+      "Options": "",
+      "Mandatory": "true",
+      "Style": "",
+      "ID": "form-phone",
+      "Fieldset": ""
+    },
+    {
+      "Name": "message",
+      "Type": "text",
+      "Label": "Message",
+      "Placeholder": "",
+      "Value": "",
+      "Options": "",
+      "Mandatory": "true",
+      "Style": "textarea-class",
+      "ID": "form-message",
+      "Fieldset": ""
+    },
+    {
+      "Name": "submit",
+      "Type": "submit",
+      "Label": "Submit",
+      "Placeholder": "",
+      "Value": "",
+      "Options": "",
+      "Mandatory": "",
+      "Style": "",
+      "ID": "form-submit",
+      "Fieldset": ""
+    }
+  ],
+  ":type": "sheet"
+}
