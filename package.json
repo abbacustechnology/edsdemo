@@ -27,7 +27,6 @@
     "stylelint-config-standard": "36.0.1"
   },
   "dependencies": {
-    "@adobe/aem-boilerplate": "file:",
-    "axios": "^1.7.5"
+    "@adobe/aem-boilerplate": "file:"
   }
 }

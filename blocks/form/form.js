@@ -55,18 +55,10 @@ async function handleSubmit(form) {
     const payload = generatePayload(form);
     console.log("apiURL---->",JSON.stringify(form.dataset.action))
     console.log("apiRequest--->",JSON.stringify(payload))
-    // const response = await fetch(form.dataset.action, {
-    //   method: 'POST',
-    //   body: JSON.stringify({ data: payload }),
+    const response = await fetch(form.dataset.action, {
+      method: 'POST',
+      body: JSON.stringify({ data: payload }),
      
-    // });
-
-    const response = await axios.post(form.dataset.action,JSON.stringify({ data: payload }))
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
     });
     console.log("apiResponse---->",JSON.stringify(response))
     if (response.ok) {
