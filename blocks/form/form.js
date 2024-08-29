@@ -115,7 +115,7 @@ async function handleSubmit(form) {
     console.log("apiURL---->", JSON.stringify(form.dataset.action));
     console.log("apiRequest--->", JSON.stringify(payload));
     const response = await fetch(form.dataset.action, {
-      mode: 'no-cors',
+      // mode: 'no-cors',
       method: 'POST',
       body: JSON.stringify({ data: payload }),
     });
