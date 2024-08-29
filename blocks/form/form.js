@@ -53,6 +53,8 @@ async function handleSubmit(form) {
 
     // create payload
     const payload = generatePayload(form);
+    console.log("apiURL---->",JSON.stringify(form.dataset.action))
+    console.log("apiRequest--->",JSON.stringify(payload))
     const response = await fetch(form.dataset.action, {
       method: 'POST',
       body: JSON.stringify({ data: payload }),

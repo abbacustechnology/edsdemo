@@ -28,9 +28,9 @@
         "Fieldset": ""
       },
       {
-        "Name": "email",
+        "Name": "job",
         "Type": "text",
-        "Label": "Email",
+        "Label": "Job",
         "Placeholder": "",
         "Value": "",
         "Options": "",
@@ -39,30 +39,7 @@
         "ID": "form-email",
         "Fieldset": ""
       },
-      {
-        "Name": "phone",
-        "Type": "text",
-        "Label": "Phone",
-        "Placeholder": "",
-        "Value": "",
-        "Options": "",
-        "Mandatory": "true",
-        "Style": "",
-        "ID": "form-phone",
-        "Fieldset": ""
-      },
-      {
-        "Name": "message",
-        "Type": "text",
-        "Label": "Message",
-        "Placeholder": "",
-        "Value": "",
-        "Options": "",
-        "Mandatory": "true",
-        "Style": "textarea-class",
-        "ID": "form-message",
-        "Fieldset": ""
-      },
+     
       {
         "Name": "submit",
         "Type": "submit",
