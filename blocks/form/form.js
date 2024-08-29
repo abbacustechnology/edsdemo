@@ -58,9 +58,7 @@ async function handleSubmit(form) {
     const response = await fetch(form.dataset.action, {
       method: 'POST',
       body: JSON.stringify({ data: payload }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
+     
     });
     console.log("apiResponse---->",JSON.stringify(response))
     if (response.ok) {
