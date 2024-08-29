@@ -62,6 +62,7 @@ async function handleSubmit(form) {
         'Content-Type': 'application/json',
       },
     });
+    console.log("apiResponse---->",JSON.stringify(response))
     if (response.ok) {
       if (form.dataset.confirmation) {
         window.location.href = form.dataset.confirmation;
