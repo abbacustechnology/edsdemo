@@ -16,7 +16,7 @@
       "Fieldset": ""
     },
     {
-      "Name": "name",
+      "Name": "contactname",
       "Type": "text",
       "Label": "Name",
       "Placeholder": "",
@@ -28,7 +28,7 @@
       "Fieldset": ""
     },
     {
-      "Name": "email",
+      "Name": "contactemail",
       "Type": "text",
       "Label": "Email",
       "Placeholder": "",
@@ -40,7 +40,7 @@
       "Fieldset": ""
     },
     {
-      "Name": "phone",
+      "Name": "contactphone",
       "Type": "text",
       "Label": "Phone",
       "Placeholder": "",
