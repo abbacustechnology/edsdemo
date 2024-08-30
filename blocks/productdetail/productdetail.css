@@ -28,3 +28,52 @@
     justify-content: 'center';
     display: flex;
 }
+
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Make sure the main content takes the available space */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+/* Styling for the no details found message */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.no-details {
+    font-size: 18px;
+    color: #555;
+    padding: 20px;
+    opacity: 0; /* Initial state for animation */
+    font-size: larger;
+    color : black;
+    font-weight: 600;
+    animation: fadeIn 2s ease-in forwards; /* Apply the fade-in animation */
+}
+
+.no-details-img {
+    height: auto;
+    width: auto;
+    padding: 20px;
+    opacity: 0; /* Initial state for animation */
+    font-size: larger;
+    color : black;
+    font-weight: 600;
+    animation: fadeIn 2s ease-in forwards; /* Apply the fade-in animation */
+}

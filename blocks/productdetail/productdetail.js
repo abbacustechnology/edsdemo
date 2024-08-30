@@ -7,8 +7,9 @@ async function fetchDataFromUrl(block) {
     const urlParams = new URLSearchParams(window.location.search);
     const data = urlParams.get("detail");
 
+    // If no data is found in the query parameters, display a "No details found" message
     if (!data) {
-        console.error("No data found in query parameters.");
+        displayNoDetailsFound(block);
         return;
     }
 
@@ -17,6 +18,7 @@ async function fetchDataFromUrl(block) {
         productData = JSON.parse(data);
     } catch (e) {
         console.error("Error parsing JSON data:", e);
+        displayNoDetailsFound(block);
         return;
     }
 
@@ -26,16 +28,18 @@ async function fetchDataFromUrl(block) {
 
     // Create the main container
     const div = document.createElement("div");
-    
-    const divImg = document.createElement("div")
-    divImg.classList.add('img-div')
-    // Create and add image
+
+    // Create a div for the image
+    const divImg = document.createElement("div");
+    divImg.classList.add("img-div");
+
+    // Create and add the product image
     const imgElement = document.createElement("img");
     imgElement.src = productData.thumbnail;
     imgElement.alt = productData.title;
     imgElement.classList.add("product-image");
     divImg.appendChild(imgElement);
-    div.appendChild(divImg)
+    div.appendChild(divImg);
 
     // Create container for title and price
     const textContainer = document.createElement("div");
@@ -56,16 +60,46 @@ async function fetchDataFromUrl(block) {
     textContainer.appendChild(priceParagraph);
     div.appendChild(textContainer);
 
+    // Create and add product description
     const descriptionContainer = document.createElement("div");
     const description = document.createElement("p");
     description.classList.add("description");
-    const descriptionTextNode = document.createTextNode(`${productData.description}`);
+    const descriptionTextNode = document.createTextNode(productData.description);
     description.appendChild(descriptionTextNode);
     descriptionContainer.appendChild(description);
-    div.appendChild(descriptionContainer)
+    div.appendChild(descriptionContainer);
 
     // Append the complete structure to the block
     block.appendChild(div);
+}
+
+// Function to display a "No details found" message
+function displayNoDetailsFound(block) {
+    block.innerHTML = ""; // Clear existing content
+
+    const imgContainer = document.createElement("div");
+    imgContainer.classList.add("no-details-img");
+    // Create the img element
+    const imgElement = document.createElement("img");
+    
+    // Set the src attribute to the path of the local image
+    imgElement.src = "../../assets/images/no_data.png"; // Adjust the path based on your directory structure
+    imgElement.alt = "Example Image";
+    
+    // Append the image to the container
+    imgContainer.appendChild(imgElement);
+    
+    // Append the container to the block
+    block.appendChild(imgContainer);
+
+    const messageContainer = document.createElement("div");
+    messageContainer.classList.add("no-details");
+
+    const message = document.createElement("p");
+    message.textContent = "No Product Details found";
+    messageContainer.appendChild(message);
+
+    block.appendChild(messageContainer);
 }
 
 
