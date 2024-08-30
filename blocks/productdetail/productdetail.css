@@ -1,0 +1,31 @@
+.div1 {
+    display: flex;
+    flex-direction: row; /* Arrange children in a row */
+    justify-content: space-between; /* Optional: space out children */
+    align-items: center; /* Optional: align items vertically center */
+    padding: 10px; /* Optional: add padding */
+}
+
+.product-image {
+    width: 300px; /* Example width */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between image and text */
+    
+}
+
+.header {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    color : black
+}
+.description{
+    color : black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+.img-div{
+    background-color: blue;
+    align-items: 'center';
+    justify-content: 'center';
+    display: flex;
+}
