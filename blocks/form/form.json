@@ -53,13 +53,13 @@
     },
     {
       "Name": "message",
-      "Type": "text",
+      "Type": "textarea",
       "Label": "Message",
       "Placeholder": "",
       "Value": "",
       "Options": "",
       "Mandatory": "true",
-      "Style": "textarea-class",
+      "Style": "message-style",
       "ID": "form-message",
       "Fieldset": ""
     },

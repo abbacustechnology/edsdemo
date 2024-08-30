@@ -214,3 +214,18 @@
 .form .button {
   max-width: 633px;
 }
+
+.message-style input[type="textarea"] {
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  /* height: 200px; */
+  width: 100%;
+  font-size: 16px;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+  resize: vertical;
+  line-height: 1.5; /* Adjust line height to match vertical centering */
+  columns: 20;
+  vertical-align: top;
+}
+
