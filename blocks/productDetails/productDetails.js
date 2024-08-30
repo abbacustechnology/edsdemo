@@ -5,7 +5,7 @@ export default async function decorate (block){
 
 async function fetchDataFromUrl (){
     const urlParams = new URLSearchParams(window.location.search);
-    const data = urlParams.get('product-detail');
+    const data = urlParams.get('title');
     
     console.log('Data from query parameter:', data);
 }
