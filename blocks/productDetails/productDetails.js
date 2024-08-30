@@ -1,9 +1,9 @@
 export default async function decorate (block){
-   await fetchDataFromUrl(block)
-    console.log("functionData---->",JSON.stringify(block))
+   await fetchDataFromUrl()
+    console.log("functionData---->",JSON.stringify(window.location.search))
 }
 
-async function fetchDataFromUrl (block){
+async function fetchDataFromUrl (){
     const urlParams = new URLSearchParams(window.location.search);
     const data = urlParams.get('product-detail');
     
