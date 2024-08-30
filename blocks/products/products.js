@@ -100,7 +100,7 @@ async function fetchData(block) {
         const thead = document.createElement('thead');
         const headerRow = document.createElement('tr');
 
-        const headers = ['Image', 'Title', 'Description', 'Price'];
+        const headers = ['Image', 'Title', 'Description', 'Price','Action'];
         headers.forEach(headerText => {
             const th = document.createElement('th');
             th.textContent = headerText;
@@ -133,6 +133,8 @@ async function fetchData(block) {
             titleCell.textContent = product.title;
             row.appendChild(titleCell);
 
+        
+
             // Product Description
             const descriptionCell = document.createElement('td');
             descriptionCell.textContent = product.description;
@@ -143,9 +145,25 @@ async function fetchData(block) {
             priceCell.textContent = `$${product.price}`;
             row.appendChild(priceCell);
 
+               // Button
+
+               const actionCell = document.createElement('td');
+               const button = document.createElement('button');
+               button.textContent = 'View Details'; // Button text
+               button.onclick = () => {
+                   alert(`Product ID: ${product.id}`); // Example action
+               };
+               actionCell.appendChild(button)
+               row.appendChild(actionCell);
+
             // Append the row to the table body
             tbody.appendChild(row);
+
+             
+
         });
+
+
 
         // Append the table body to the table
         table.appendChild(tbody);
