@@ -151,7 +151,7 @@ async function fetchData(block) {
                const button = document.createElement('button');
                button.textContent = 'View Details'; // Button text
                button.onclick = () => {
-                window.location.href = `https://main--edsdemo--abbacustechnology.hlx.live/product-detail?title=${product.title}`
+                window.location.href = `https://main--edsdemo--abbacustechnology.hlx.live/product-detail?detail=${JSON.stringify(product)}`
                };
                actionCell.appendChild(button)
                row.appendChild(actionCell);
