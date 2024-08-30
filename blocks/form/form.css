@@ -201,3 +201,16 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+.form-section form {
+  max-width: 633px;
+  margin: auto;
+}
+.form-section .form input, .form-section .form select, .form-section .form textarea {
+  max-width: 100%;
+}
+
+
+.form .button {
+  max-width: 633px;
+}
