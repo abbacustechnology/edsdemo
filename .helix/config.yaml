@@ -1,9 +1,25 @@
+version: 1
+host: "aemfranklin.mintbig.com"
+
 strains:
   - name: subdomain-strain
     condition: request.url~"^https://aemfranklin.mintbig.com/"
-    code: https://github.com/abbacustechnology/edsdemo/main
-    content: https://main--edsdemo--abbacustechnology.hlx.live/
+    code: https://github.com/abbacustechnology/edsdemo
+    content: https://main--edsdemo--abbacustechnology.hlx.live
     static:
       path: /static
       headers:
         cache-control: max-age=31536000
+
+cdn:
+  prod:
+    host: "aemfranklin.mintbig.com"
+    type: "cloudflare"
+    plan: "free"  # Change this according to your Cloudflare plan: free, pro, business, enterprise
+    zoneId: "20138a164babbecb7ba3fd6dc96dc115"
+    apiToken: "0oCYgV6wtyG-hM1gdQnHm2uVu99RsFFfcjJ4RRcY"
+
+static:
+  path: /static
+  headers:
+    cache-control: max-age=31536000
