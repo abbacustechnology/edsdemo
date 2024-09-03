@@ -1,0 +1,9 @@
+strains:
+  - name: subdomain-strain
+    condition: request.url~"^https://aemfranklin.mintbig.com/"
+    code: https://github.com/abbacustechnology/edsdemo/main
+    content: https://main--edsdemo--abbacustechnology.hlx.live/
+    static:
+      path: /static
+      headers:
+        cache-control: max-age=31536000
