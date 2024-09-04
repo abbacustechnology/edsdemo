@@ -491,3 +491,9 @@ header nav .nav-brand img {
   }
 
 
+  main .section.columns-container{padding:0px;}
+.finaldiv .columns-wrapper{margin:0px;padding:0px;}
+main .section.columns-container{overflow:hidden;}
+.section.finaldiv.columns-container .columns-wrapper .columns.block.columns-2-cols .columns-img-col{padding:40px;}
+
+
