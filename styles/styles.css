@@ -488,6 +488,8 @@ header nav .nav-brand img {
 
   .section.finaldiv.columns-container .columns-wrapper .columns.block.columns-2-cols .columns-img-col picture img{
     float: left;
+    width: 436px;
+    height: auto;
   }
 
 
