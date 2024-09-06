@@ -100,6 +100,7 @@ async function loadEager(doc) {
  */
 async function loadLazy(doc) {
   autolinkModals(doc);
+  autolinkMegamenu(doc)
   const main = doc.querySelector('main');
   await loadSections(main);
 
@@ -131,6 +132,18 @@ function autolinkModals(element) {
     if (origin && origin.href && origin.href.includes('/modals/')) {
       e.preventDefault();
       const { openModal } = await import(`${window.hlx.codeBasePath}/blocks/modal/modal.js`);
+      openModal(origin.href);
+    }
+  });
+}
+
+function autolinkMegamenu(element) {
+  element.addEventListener('click', async (e) => {
+    const origin = e.target.closest('a');
+
+    if (origin && origin.href && origin.href.includes('/megamenu/')) {
+      e.preventDefault();
+      const { openModal } = await import(`${window.hlx.codeBasePath}/blocks/modal/megamenu.js`);
       openModal(origin.href);
     }
   });

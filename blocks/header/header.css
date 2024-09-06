@@ -152,7 +152,7 @@ header nav .nav-brand img {
 /* sections */
 header nav .nav-sections {
   grid-area: sections;
-  flex: 1 1 auto;
+  /* flex: 1 1 auto; */
   display: none;
   visibility: hidden;
 }
@@ -271,3 +271,5 @@ a:hover {
   color: yellow;
   
 }
+
+
