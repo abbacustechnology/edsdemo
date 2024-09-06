@@ -72,11 +72,22 @@ export async function createModal(contentNodes) {
     const { showModal, closeModal } = await createModal(fragment.childNodes);
   
     // Event listeners for hover functionality
-    hoverElement.addEventListener('mouseenter', () => {
-      showModal();
-    });
+    // hoverElement.addEventListener('mouseenter', () => {
+    //   showModal();
+    // });
   
-    hoverElement.addEventListener('mouseleave', () => {
-      closeModal();
-    });
+    // hoverElement.addEventListener('mouseleave', () => {
+    //   closeModal();
+    // });
+
+    if (window.matchMedia('(hover: hover)').matches) {
+        hoverElement.addEventListener('mouseenter', () => {
+          showModal();
+        });
+      
+        hoverElement.addEventListener('mouseleave', () => {
+          setTimeout(() => {
+            closeModal();
+          }, 100); // Delay for better UX
+        });}
   }
