@@ -82,6 +82,7 @@ export async function createModal(contentNodes) {
 
     if (window.matchMedia('(hover: hover)').matches) {
         hoverElement.addEventListener('mouseenter', () => {
+            console.log('Hover in'); 
           showModal();
         });
       
