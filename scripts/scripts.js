@@ -143,7 +143,7 @@ function autolinkMegamenu(element) {
 
     if (origin && origin.href && origin.href.includes('/megamenu/')) {
       e.preventDefault();
-      const { openModal } = await import(`${window.hlx.codeBasePath}/blocks/modal/megamenu.js`);
+      const { openModal } = await import(`${window.hlx.codeBasePath}/blocks/megamenu/megamenu.js`);
       openModal(origin.href);
     }
   });

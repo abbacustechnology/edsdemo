@@ -1,94 +1,53 @@
-import { loadFragment } from '../fragment/fragment.js';
-import {
-  buildBlock, decorateBlock, loadBlock, loadCSS,
-} from '../../scripts/aem.js';
+export default async function decorate(block) {
+  createButton(block);
+}
 
-/*
-  This is not a traditional block, so there is no decorate function.
-  Instead, links to a /modals/ path are automatically transformed into a modal.
-  Other blocks can also use the createModal() and openModal() functions.
-*/
+function createButton(block) {
+  const div = document.createElement('div');
+  const button = document.createElement('button');
+  const modal = createModal(); // Create the modal
 
-export async function createModal(contentNodes) {
-    await loadCSS(`${window.hlx.codeBasePath}/blocks/megamenu/megamenu.css`);
-    const dialog = document.createElement('dialog');
-    const dialogContent = document.createElement('div');
-    dialogContent.classList.add('modal-content');
-    dialogContent.append(...contentNodes);
-    dialog.append(dialogContent);
-  
-    const closeButton = document.createElement('button');
-    closeButton.classList.add('close-button');
-    closeButton.setAttribute('aria-label', 'Close');
-    closeButton.type = 'button';
-    closeButton.innerHTML = '<span class="icon icon-close"></span>';
-    closeButton.addEventListener('click', () => dialog.close());
-    dialog.prepend(closeButton);
-  
-    const block = buildBlock('modal', '');
-    document.querySelector('main').append(block);
-    decorateBlock(block);
-    await loadBlock(block);
-  
-    // close on click outside the dialog
-    dialog.addEventListener('click', (e) => {
-      const {
-        left, right, top, bottom,
-      } = dialog.getBoundingClientRect();
-      const { clientX, clientY } = e;
-      if (clientX < left || clientX > right || clientY < top || clientY > bottom) {
-        dialog.close();
-      }
-    });
-  
-    dialog.addEventListener('close', () => {
-      document.body.classList.remove('modal-open');
-      block.remove();
-    });
-  
-    block.innerHTML = '';
-    block.append(dialog);
-  
-    return {
-      block,
-      showModal: () => {
-        dialog.showModal();
-        // reset scroll position
-        setTimeout(() => { dialogContent.scrollTop = 0; }, 0);
-        document.body.classList.add('modal-open');
-      },
-      closeModal: () => {
-        dialog.close();
-      }
-    };
-  }
+  // Set the button's text content
+  button.textContent = 'Hover Me';
 
-  export async function openModal(fragmentUrl, hoverElement) {
-    const path = fragmentUrl.startsWith('http')
-      ? new URL(fragmentUrl, window.location).pathname
-      : fragmentUrl;
-  
-    const fragment = await loadFragment(path);
-    const { showModal, closeModal } = await createModal(fragment.childNodes);
-  
-    // Event listeners for hover functionality
-    // hoverElement.addEventListener('mouseenter', () => {
-    //   showModal();
-    // });
-  
-    // hoverElement.addEventListener('mouseleave', () => {
-    //   closeModal();
-    // });
+  // Add class for styling
+  button.classList.add('trigger-button');
 
-    if (window.matchMedia('(hover: hover)').matches) {
-        hoverElement.addEventListener('mouseenter', () => {
-            console.log('Hover in'); 
-          showModal();
-        });
-      
-        hoverElement.addEventListener('mouseleave', () => {
-          setTimeout(() => {
-            closeModal();
-          }, 100); // Delay for better UX
-        });}
-  }
+  // Append the button and modal to the div and block
+  div.appendChild(button);
+  div.appendChild(modal);
+  block.appendChild(div);
+
+  // Add event listeners for hover
+  button.addEventListener('mouseover', () => {
+    console.log("Button hovered");
+    modal.classList.add('visible'); // Show modal on hover
+  });
+
+  button.addEventListener('mouseout', () => {
+    console.log("Button not hovered");
+    modal.classList.remove('visible'); // Hide modal when not hovering
+  });
+}
+
+function createModal() {
+  const modal = document.createElement('div');
+  modal.classList.add('modal');
+
+  const modalContent = document.createElement('div');
+  modalContent.classList.add('modal-content');
+  modalContent.textContent = 'This is a modal!'; // Modal content
+
+  // const closeButton = document.createElement('button');
+  // closeButton.classList.add('close-button');
+  // closeButton.textContent = '×'; // Close button
+
+  // closeButton.addEventListener('click', () => {
+  //   modal.classList.remove('visible');
+  // });
+
+  // modal.appendChild(closeButton);
+  modal.appendChild(modalContent);
+
+  return modal;
+}

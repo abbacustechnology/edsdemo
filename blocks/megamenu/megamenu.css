@@ -1,85 +1,66 @@
-body.modal-open {
-    overflow: hidden;
+/* Basic styling for the modal container */
+.modal {
+  display: block; /* Make sure it's visible */
+  position: relative;
+  top: 100%;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 200px;
+  opacity: 1; /* Ensure it's visible */
+  visibility: hidden; /* Ensure visibility */
+}
+
+/* Show the modal when the 'visible' class is added */
+.modal.visible {
+  display: block; /* Show block to ensure visibility */
+  opacity: 1; /* Make it fully visible */
+  visibility: visible; /* Ensure visibility */
+}
+
+/* Styling for the button to trigger the modal */
+.trigger-button {
+  position: relative; /* Needed for absolute positioning of the modal */
+  background-color: #007bff; /* Button color */
+  color: #fff; /* Button text color */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Optional: Add hover effect for the button */
+.trigger-button:hover {
+  background-color: #0056b3; /* Darker color on hover */
+}
+
+/* Optional: Close button styling */
+.modal .close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px; /* Adjust size as needed */
+  text-align: center;
+}
+
+/* Close button icon styling */
+.modal .close-button::before {
+  content: '×'; /* Unicode character for 'X' */
+}
+
+/* Optional media query for responsiveness */
+@media (min-width: 900px) {
+  .modal {
+    width: 300px; /* Adjust width for larger screens */
   }
-  
-  .modal dialog::backdrop {
-    background-color: rgb(19 19 19 / 75%);
-  }
-  
-  .modal dialog {
-    overscroll-behavior: none;
-    overflow-y: hidden;
-    position: relative;
-    width: calc(100vw - 48px);
-    max-width: 900px;
-    max-height: calc(100dvh - (2 * var(--header-height)));
-    padding: 0;
-    border: 1px solid var(--dark-color);
-  }
-  
-  .modal dialog .modal-content {
-    box-sizing: border-box;
-    overflow-y: auto;
-    overscroll-behavior: none;
-    width: 100%;
-    max-height: calc(100dvh - (2 * var(--header-height)) - 48px);
-    padding: 24px;
-    padding-top: 0;
-    margin-top: 44px;
-  }
-  
-  @media (width >= 900px) {
-    .modal dialog {
-      width: calc(100vw - 64px);
-    }
-    
-    .modal dialog .modal-content {
-      max-height: calc(100dvh - (2 * var(--header-height)) - 64px);
-      padding: 32px;
-      padding-top: 0;
-    }
-  }
-  
-  .modal .close-button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 44px;
-    height: 44px;
-    margin: 0;
-    border: none;
-    border-radius: 0;
-    padding: 0;
-    background-color: transparent;
-    color: var(--text-color);
-    line-height: 0;
-  }
-  
-  .modal .close-button .icon.icon-close {
-    content: '';
-    width: 24px;
-    height: 24px;
-  }
-  
-  .modal .close-button .icon.icon-close::before,
-  .modal .close-button .icon.icon-close::after {
-    content: '';
-    box-sizing: border-box;
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
-    width: 24px;
-    height: 2px;
-    border-radius: 2px;
-    background-color: currentcolor;
-  }
-  
-  .modal .close-button .icon.icon-close::after {
-    transform: translate(-50%, -50%) rotate(-45deg)
-  }
-  
-  .modal dialog .section {
-    padding: 0;
-  }
+}
