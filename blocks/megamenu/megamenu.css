@@ -1,66 +1,41 @@
-/* Basic styling for the modal container */
-.modal {
-  display: block; /* Make sure it's visible */
-  position: relative;
-  top: 100%;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  padding: 16px;
-  border-radius: 8px;
-  z-index: 1000;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  width: 200px;
-  opacity: 1; /* Ensure it's visible */
-  visibility: hidden; /* Ensure visibility */
-}
-
-/* Show the modal when the 'visible' class is added */
-.modal.visible {
-  display: block; /* Show block to ensure visibility */
-  opacity: 1; /* Make it fully visible */
-  visibility: visible; /* Ensure visibility */
-}
-
-/* Styling for the button to trigger the modal */
-.trigger-button {
-  position: relative; /* Needed for absolute positioning of the modal */
-  background-color: #007bff; /* Button color */
-  color: #fff; /* Button text color */
-  border: none;
+/* Button styles */
+.my-button {
   padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-/* Optional: Add hover effect for the button */
-.trigger-button:hover {
-  background-color: #0056b3; /* Darker color on hover */
-}
-
-/* Optional: Close button styling */
-.modal .close-button {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 24px;
-  height: 24px;
-  background: transparent;
+  margin: 5px;
+  background-color: #007bff;
+  color: white;
   border: none;
-  color: #fff;
+  border-radius: 5px;
   cursor: pointer;
-  font-size: 18px; /* Adjust size as needed */
-  text-align: center;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
-/* Close button icon styling */
-.modal .close-button::before {
-  content: '×'; /* Unicode character for 'X' */
+.my-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
 }
 
-/* Optional media query for responsiveness */
-@media (min-width: 900px) {
-  .modal {
-    width: 300px; /* Adjust width for larger screens */
-  }
+/* Modal styles */
+.modal {
+  position: absolute; /* Change from fixed to absolute */
+  z-index: 1000;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  display: none;
+  max-width: 600px;
+  width: 100%; /* Ensure it takes the width of its content */
+}
+
+.modal.visible {
+  display: block;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  padding: 10px;
 }
