@@ -63,5 +63,13 @@
     display: none;
   }
 
+  .tabs .tabs-list button[aria-selected='true'] {
+    border-bottom: 1px solid black;
+    background-color: transparent !important;
+    color: black !important;
+    /* cursor: initial; */
+    text-decoration: none !important;
+  }
+
 
 
