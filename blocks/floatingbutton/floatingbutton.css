@@ -24,4 +24,8 @@
   .floating-button:hover {
     background-color: rgba(255, 87, 51, 0.8); /* Optional: change color on hover */
   }
+
+  .section.floatingbutton-container .floatingbutton-wrapper .floatingbutton.block.columns-1-cols > div > div {
+    display: none;
+  }
   
