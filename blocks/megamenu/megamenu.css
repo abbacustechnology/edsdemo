@@ -22,21 +22,25 @@
   position: absolute; /* Keep it absolute if it's anchored to a specific element */
   top: 0; /* Adjust based on where you want it to appear relative to the button */
   left: 20%; /* Center horizontally */
-  transform: translateX(-50%); /* Center it relative to the left position */
+  transform: translateX(-85%); /* Center it relative to the left position */
   z-index: 1000;
   background-color: white;
   border-radius: 10px;
-  padding: 20px;
+  margin: 0px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  display: none;
-  max-width: 600px;
+  max-width: 1100px;
   width: 100%; /* Ensure it takes the width of its content */
   max-height: 80vh; /* Ensure it doesn't overflow the viewport vertically */
   overflow-y: auto; /* Add scroll if content overflows */
+  padding-top: 10px;
 }
 
 .modal.visible {
   display: block;
+}
+
+.modal-content {
+  padding: 0px !important;
 }
 
 .modal.hidden {
@@ -53,5 +57,5 @@
   right: 10px;
   font-size: 24px;
   cursor: pointer;
-  color: black; /* Adjust color as needed */
+  color: black !important; /* Adjust color as needed */
 }

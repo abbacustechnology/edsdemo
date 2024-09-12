@@ -49,8 +49,8 @@ export default function decorate(block) {
 
         // Add an event listener for mouseleave to hide the modal
         button.addEventListener('mouseleave', () => {
-          modal.classList.remove('visible'); // Hide modal
-          modal.classList.add('hidden');
+          // modal.classList.remove('visible'); 
+          // modal.classList.add('hidden');
           console.log('mouse out');
         });
 

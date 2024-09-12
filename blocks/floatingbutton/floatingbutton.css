@@ -11,7 +11,7 @@
     display: flex; /* Center content */
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
-    background-color: #ffcc28; /* Set background color to match the button */
+    background-color: #386ec8; /* Set background color to match the button */
   }
   
   .floating-button img {
