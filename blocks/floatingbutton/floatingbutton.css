@@ -21,9 +21,9 @@
     margin-top: 10px;
   }
   
-  .floating-button:hover {
-    background-color: rgba(255, 87, 51, 0.8); /* Optional: change color on hover */
-  }
+  /* .floating-button:hover {
+    background-color: rgba(255, 87, 51, 0.8); 
+  } */
 
   .section.floatingbutton-container .floatingbutton-wrapper .floatingbutton.block.columns-1-cols > div > div {
     display: none;
