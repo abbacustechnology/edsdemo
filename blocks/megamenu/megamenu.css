@@ -1,23 +1,28 @@
 /* Button styles */
 .my-button {
-  padding: 10px 20px;
-  margin: 5px;
-  background-color: #007bff;
+  /* padding: 10px 20px; */
+  /* margin: 5px; */
+  background-color: transparent;
   color: white;
-  border: none;
-  border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s ease;
+  align-self: center;
 }
 
+
+
 .my-button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+ color: #ffcc28 !important;
+ background-color: transparent !important;
 }
 
 /* Modal styles */
 .modal {
-  position: absolute; /* Change from fixed to absolute */
+  position: absolute; /* Keep it absolute if it's anchored to a specific element */
+  top: 0; /* Adjust based on where you want it to appear relative to the button */
+  left: 20%; /* Center horizontally */
+  transform: translateX(-50%); /* Center it relative to the left position */
   z-index: 1000;
   background-color: white;
   border-radius: 10px;
@@ -26,6 +31,8 @@
   display: none;
   max-width: 600px;
   width: 100%; /* Ensure it takes the width of its content */
+  max-height: 80vh; /* Ensure it doesn't overflow the viewport vertically */
+  overflow-y: auto; /* Add scroll if content overflows */
 }
 
 .modal.visible {
@@ -38,4 +45,13 @@
 
 .modal-content {
   padding: 10px;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: black; /* Adjust color as needed */
 }

@@ -1,0 +1,27 @@
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px; /* Ensure width and height are equal for a round button */
+    height: 60px; /* Ensure width and height are equal for a round button */
+    padding: 0; /* Remove padding to maintain a perfect circle */
+    border-radius: 50%; /* 50% border-radius to make it round */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex; /* Center content */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    background-color: #ffcc28; /* Set background color to match the button */
+  }
+  
+  .floating-button img {
+    width: 30px !important; /* Adjust the size of the image */
+    height: 30px !important; /* Adjust the size of the image */
+    filter: brightness(0) invert(1) brightness(0.9);
+    margin-top: 10px;
+  }
+  
+  .floating-button:hover {
+    background-color: rgba(255, 87, 51, 0.8); /* Optional: change color on hover */
+  }
+  

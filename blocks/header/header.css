@@ -268,8 +268,13 @@ header nav .nav-tools {
 }
 
 a:hover {
-  color: yellow;
+  color: #ffcc28;
   
 }
-
+ .section.megamenu-container.nav-sections .default-content-wrapper > ul {
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  margin: auto;
+}
 

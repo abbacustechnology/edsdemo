@@ -55,7 +55,7 @@ export default function decorate(block) {
         });
 
         // Add the button to the container
-        const container = document.querySelector('.hover-content'); // Ensure container exists
+        const container = document.querySelector('.section.megamenu-container.nav-sections .default-content-wrapper > ul '); // Ensure container exists
         if (container) {
           container.appendChild(button);
         } else {
@@ -68,13 +68,58 @@ export default function decorate(block) {
   });
 }
 
+// async function createModal(url) {
+//   const modal = document.createElement('div');
+//   modal.classList.add('modal');
+
+//   const modalContent = document.createElement('div');
+//   modalContent.classList.add('modal-content');
+  
+//   // Define the fragment URL (this can be dynamic or hardcoded)
+//   const fragmentUrl = url;
+  
+//   // Extract the path from the URL
+//   const path = fragmentUrl.startsWith('http')
+//     ? new URL(fragmentUrl, window.location).pathname
+//     : fragmentUrl;
+
+//   try {
+//     // Load the fragment content
+//     const fragment = await loadFragment(path);
+//     modalContent.append(...fragment.childNodes); // Append the fragment content to modal
+//   } catch (error) {
+//     console.error('Error loading fragment:', error);
+//     modalContent.textContent = 'Error loading content.';
+//   }
+
+//   modal.appendChild(modalContent);
+//   return modal;
+// }
+
 async function createModal(url) {
   const modal = document.createElement('div');
   modal.classList.add('modal');
 
   const modalContent = document.createElement('div');
   modalContent.classList.add('modal-content');
-  
+
+  // Create close button (cross)
+  const closeButton = document.createElement('span');
+  closeButton.classList.add('close-button');
+  closeButton.textContent = '✕'; // Unicode character for cross symbol
+  closeButton.style.position = 'absolute';
+  closeButton.style.top = '10px';
+  closeButton.style.right = '10px';
+  closeButton.style.cursor = 'pointer';
+  closeButton.style.fontSize = '24px';
+  closeButton.style.color = '#fff'; // You can adjust the color as needed
+
+  // Add close button click event to hide modal
+  closeButton.addEventListener('click', () => {
+    modal.classList.remove('visible');
+    modal.classList.add('hidden');
+  });
+
   // Define the fragment URL (this can be dynamic or hardcoded)
   const fragmentUrl = url;
   
@@ -92,6 +137,10 @@ async function createModal(url) {
     modalContent.textContent = 'Error loading content.';
   }
 
+  // Append the close button and content to the modal
+  modal.appendChild(closeButton);
   modal.appendChild(modalContent);
+
   return modal;
 }
+
