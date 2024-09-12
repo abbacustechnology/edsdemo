@@ -27,13 +27,13 @@
 }
 
 .section.capabilities.columns-container .columns-wrapper .columns.block.columns-10-cols .button-container p  :hover {
-    
+    color : #f6cc28 !important;
     margin: 0px;
     background-color: transparent !important;
     padding: 0px;
     text-align: left;
     font-size: 15px;
-    color: black !important;
+
     line-height: 12px;
     padding: 2px;
 }
